@@ -1,1 +1,25 @@
+#include <stdio.h>
+#include <math.h>
 
+int main() {
+    float a = 0.0 ,b = 0.0 ,c = 0.0;
+    printf("Enter 3 numbers;\n");
+    scanf("%f %f %f",&a,&b,&c);
+    
+    ///////////////////////////////////
+    
+    float disc = pow(b,2) - 4*a*c;
+    float x1 = (-b + sqrt(disc))/(2*a);
+	float x2 = (-b - sqrt(disc))/(2*a);    
+    
+	if (disc < 0){
+    	printf("No roots");
+	}
+    if (disc == 0){
+    	printf("Have 1 root;\n %f",x1);
+	}
+	if (disc > 0){
+    	printf("x1;%f \nx2;%f",x1,x2);
+	}	
+return 0;
+}
