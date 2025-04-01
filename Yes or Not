@@ -1,0 +1,14 @@
+#include <stdbool.h>
+#include <stdio.h>
+
+int main(){
+	bool flag = true;
+	int x = 0;
+	while (flag) {
+		printf("Do you want to continue?\n1.Yes\n2.No\n");
+		scanf("%d", &x);
+		if(x == 2)
+			flag = false;
+	}
+	return 0;
+}
