@@ -1,0 +1,44 @@
+#include <iostream>
+
+int main() {
+	
+	double massiv[3][3];
+	double sum_diagonal = 0;
+	double sum_pob_diagonal = 0;
+	
+	printf("Enter 9 elements of matrix;\n");
+	for (int i = 0; i < 3; i++){
+		
+		scanf("%lf %lf %lf",&massiv[i][0] ,&massiv[i][1], &massiv[i][2]);
+		
+		sum_diagonal += massiv[i][i];
+		sum_pob_diagonal += massiv[i][2-i];
+				
+	}
+
+	printf("Sum of elements on the main diagonal: %.2f\n",sum_diagonal);
+	printf("Sum of elements on the second diagonal: %.2f\n",sum_pob_diagonal);
+	
+	
+    //////////////////////////////////////////////////////////////////////////
+	
+	int massiv2[2][2];
+	 
+	
+	printf("Enter 4 elements of matrix\n");
+	
+	for (int i = 0;i < 2;i++){
+		for (int j = 0;j < 2;j++){
+			scanf("%d",&massiv2[i][j]);
+		}
+	}
+	
+	int element11 = massiv2[0][0]*massiv2[0][0] + massiv2[0][1]*massiv2[1][0];
+	int element12 = massiv2[0][0]*massiv2[0][1] + massiv2[0][1]*massiv2[1][1];
+	int element21 = massiv2[1][0]*massiv2[0][0] + massiv2[1][1]*massiv2[1][0];
+	int element22 = massiv2[1][0]*massiv2[0][1] + massiv2[1][1]*massiv2[1][1];
+
+	printf("Matrix\n%d %d \n%d %d",element11,element12,element21,element22);
+	
+	return 0;
+}
