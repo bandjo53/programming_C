@@ -1,0 +1,24 @@
+#include <iostream>
+#include <ctype.h>
+
+int main() {
+	
+	char str[100];
+	
+	printf("Enter the line;\n");
+	scanf("%99[^\n]",str);
+	
+	int len = strlen(str);
+
+	if (len > 80){
+		printf("Length of line > 80;\nLength of your line;%d",len);
+	}
+	if (len <= 80){
+		for (int i;str[i];i++){
+			str[i] = toupper(str[i]);
+		}
+	printf("Your line;\n%s", str);	
+	}
+	
+	return 0;
+}
