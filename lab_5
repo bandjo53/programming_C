@@ -1,0 +1,120 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+
+void move(int** matrix1, int** matrix2, int n, int m, int y, int x) {
+    char flag;
+
+    printf("Choose an option(+,-,*); ");
+    scanf(" %c", &flag);
+
+    if (flag == '+' || flag == '-' || flag == '*') {
+        if (flag == '+') {
+            if (n == y && m == x) {
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < m; j++) {
+                        printf("%d ", matrix1[i][j] + matrix2[i][j]);
+                    }
+                    printf("\n");
+                }
+            } else {
+                printf("Error; The matrices are not equal");
+            }
+        }
+        if (flag == '-') {
+            if (n == y && m == x) {
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < m; j++) {
+                        printf("%d ", matrix1[i][j] - matrix2[i][j]);
+                    }
+                    printf("\n");
+                }
+            } else {
+                printf("Error; The matrices are not equal");
+            }
+        }
+        if (flag == '*') {
+            int sum = 0;
+            if (m == y) {
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < x; j++) {
+                        sum = 0;
+                        for (int k = 0; k < m; k++) {
+                            sum += matrix1[i][k] * matrix2[k][j];
+                        }
+                        printf("%d ", sum);
+                    }
+                    printf("\n");
+                }
+            }
+        }
+    }
+}
+
+int main() {
+    int n, m, i, j;
+
+    printf("1st matrix;\n");
+    printf("Row count;\n");
+    scanf("%d", &n);
+    printf("Column count;\n");
+    scanf("%d", &m);
+
+    int** matrix1 = (int**)malloc(n * sizeof(int*));
+    for (int i = 0; i < n; i++) {
+        matrix1[i] = (int*)malloc(m * sizeof(int));
+    }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            printf("a[%d][%d]; ", i, j);
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("%d ", matrix1[i][j]);
+        }
+        printf("\n");
+    }
+///////////////////////////////////////////////
+    int y, x, p, l;
+    printf("2nd matrix;\n");
+    printf("Row count;\n");
+    scanf("%d", &y);
+    printf("Column count;\n");
+    scanf("%d", &x);
+    
+    int** matrix2 = (int**)malloc(y * sizeof(int*));
+    for (int i = 0; i < y; i++) {
+        matrix2[i] = (int*)malloc(x * sizeof(int));
+    }
+
+    for (p = 0; p < y; p++) {
+        for (l = 0; l < x; l++) {
+            printf("a[%d][%d]; ", p, l);
+            scanf("%d", &matrix2[p][l]);
+        }
+    }
+    for (p = 0; p < y; p++) {
+        for (l = 0; l < x; l++) {
+            printf("%d ", matrix2[p][l]);
+        }
+        printf("\n");
+    }
+    
+//////////////////////////////////////////////
+    
+	move(matrix1, matrix2, n, m, y, x);
+
+    for (int i = 0; i < n; i++) {
+        free(matrix1[i]);
+    }
+    free(matrix1);
+
+    for (int i = 0; i < y; i++) {
+        free(matrix2[i]);
+    }
+    free(matrix2);
+    return 0;
+}
