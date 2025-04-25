@@ -1,26 +1,28 @@
-#include <iostream>
-#include <cmath>
+#include <stdio.h>
+#include <math.h>
 
-int math(int a, int b, int c){
-	int perimeter = a + b + c;
-	double p = perimeter / 2.0;
-	double area = sqrt(p*(p-a)*(p-b)*(p-c));
+char math(int a,int b, int c){
+	float perimetr = a + b + c;
+	float p = perimetr/2;
+	float area = sqrt(p*(p-a)*(p-b)*(p-c));
 	
-	printf("Perimeter; %d\n",perimeter);
-	printf("Area; %.2f",area); 
+	printf("Perimetr of tringle; %f",perimetr);
+	printf("\nArea of tringle; %f %f",p,area);
 }
+
+
+
+int main(){
+	int a,b,c;
 	
-int main() {
-	int a = 0,b = 0,c = 0;
+	printf("Enter 3 digit\n");
+	scanf("%d %d %d",&a,&b,&c);
 	
-	printf("Enter 3 sides of the triangle;\n");
-	scanf("%d%d%d" ,&a, &b, &c);
-	
-	if ((a < b + c) && (b < a + c) && (c < a + b)){
+	if(a > b + c || b > a + c || c > a + b){
+		printf("Error");
+	}else{
 		math(a,b,c);
 	}
-	else{
-		printf("Error: The sides do not satisfy the triangle inequality.\n");
-	}
+	
 	return 0;
 }
