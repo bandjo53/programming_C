@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-
 void move(int** matrix1, int** matrix2, int n, int m, int y, int x) {
     char flag;
 
