@@ -8,7 +8,6 @@ void move(int** matrix1, int** matrix2, int n, int m, int y, int x) {
     printf("Choose an option(+,-,*); ");
     scanf(" %c", &flag);
 
-
     if (flag == '+' || flag == '-' || flag == '*') {
         if (flag == '+') {
             if (n == y && m == x) {
