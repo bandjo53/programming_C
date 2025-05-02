@@ -1,26 +1,36 @@
 #include <stdio.h>
 #include <math.h>
 
-char math(int a,int b, int c){
-	float perimetr = a + b + c;
-	float p = perimetr/2;
-	float area = sqrt(p*(p-a)*(p-b)*(p-c));
-	
-	printf("Perimetr of tringle; %f",perimetr);
-	printf("\nArea of tringle; %f %f",p,area);
+float perimeter(int a, int b, int c){
+	return (a + b + c);
+}
+float square(int a,int b, int c){
+	float p = perimeter(a,b,c)/2;
+	return (sqrt(p*(p-a)*(p-b)*(p-c)));
+}
+float h_a(int a,int b, int c){
+	return(2*square(a,b,c)/a);
+}
+float h_b(int a,int b, int c){
+	return(2*square(a,b,c)/b);
+}
+float h_c(int a,int b, int c){
+	return(2*square(a,b,c)/c);
 }
 
-
 int main(){
-	int a,b,c;
-	
+	int a,b,c;	
 	printf("Enter 3 digit\n");
 	scanf("%d %d %d",&a,&b,&c);
 	
 	if(a > b + c || b > a + c || c > a + b){
 		printf("Error");
 	}else{
-		math(a,b,c);
+		printf("Perimeter: %.2f\n",perimeter(a,b,c));
+		printf("Square: %.2f\n",square(a,b,c));
+		printf("Height-a; %.2f\n",h_a(a,b,c));
+		printf("Height-b; %.2f\n",h_b(a,b,c));
+		printf("Height-c; %.2f\n",h_c(a,b,c));
 	}
 	
 	return 0;
