@@ -5,6 +5,7 @@
 void move(int** matrix1, int** matrix2, int n, int m, int y, int x) {
     char flag;
 
+
     printf("Choose an option(+,-,*); ");
     scanf(" %c", &flag);
 
