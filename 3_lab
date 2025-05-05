@@ -6,7 +6,8 @@
 int main(){
 	char spis[100];
 	int i;
-	
+
+
 	printf("Enter string;\n");
 	scanf("%99s",&spis);
 	
