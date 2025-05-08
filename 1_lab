@@ -6,7 +6,8 @@ int main() {
 
     printf("Enter 3 numbers;\n");
     scanf("%f %f %f",&a,&b,&c);
-    
+
+
     ///////////////////////////////////
     
     float disc = pow(b,2) - 4*a*c;
