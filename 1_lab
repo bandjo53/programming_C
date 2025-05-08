@@ -3,6 +3,7 @@
 
 int main() {
     float a = 0.0 ,b = 0.0 ,c = 0.0;
+
     printf("Enter 3 numbers;\n");
     scanf("%f %f %f",&a,&b,&c);
     
